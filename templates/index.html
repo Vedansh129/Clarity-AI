@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clarity AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="main">
+
+    <div class="card">
+        <h1>🧠 Clarity AI</h1>
+        <p class="subtitle">Turn confusion into clear decisions</p>
+
+        <form method="POST" onsubmit="showLoader()">
+            <textarea name="user_input" placeholder="Describe your situation..." required></textarea>
+
+            <button type="submit">
+                <span id="btn-text">Get Clarity</span>
+                <span id="loader" class="loader hidden"></span>
+            </button>
+        </form>
+    </div>
+
+    {% if result %}
+    <div class="result-card">
+        <h2>🎯 Final Decision</h2>
+        <p class="decision">{{ result.recommendation }}</p>
+
+        <h3>💡 Why this?</h3>
+        <p class="reason">{{ result.reason }}</p>
+    </div>
+    {% endif %}
+
+    <div class="history">
+        <h2>📜 Past Decisions</h2>
+
+        {% for item in history %}
+            <div class="history-item">
+                <p><strong>Input:</strong> {{ item[1] }}</p>
+                <p><strong>Decision:</strong> {{ item[2] }}</p>
+
+                <form action="/delete/{{ item[0] }}" method="POST">
+                    <button class="delete-btn">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<script>
+function showLoader() {
+    document.getElementById("btn-text").innerText = "Thinking...";
+    document.getElementById("loader").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

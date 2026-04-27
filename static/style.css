@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Glass Card */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    border: none;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+/* Button Upgrade */
+button {
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Loader */
+.loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Result Card */
+.result-card {
+    margin-top: 25px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+}
+
+.decision {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffb347;
+}
+
+.reason {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* History */
+.history {
+    margin-top: 30px;
+    width: 400px;
+}
+
+.history-item {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.history-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-btn {
+    margin-top: 10px;
+    background: #ff4d4d;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    opacity: 0.8;
+}
